@@ -10,46 +10,121 @@
    El resultado es la empanada cuyo vector queda más cerca
    del vector acumulado de tus respuestas (distancia euclidiana).
 ========================================================= */
-
 const EMPANADAS = [
-  { name:"Carne mechada", img:"mechada.webp", vec:[2,0,-2,-1,0,0],
-    desc:"El clásico de los clásicos. No necesitas inventar nada nuevo: tu sola presencia genera confianza. La gente sabe qué esperar de ti, y justo por eso te quiere." },
-  { name:"Carne molida", img:"carnemolida.webp", vec:[2,-1,-2,-2,0,-1],
-    desc:"Sin lujos, sin drama, sin vueltas. Vas directo al grano y eso es una virtud: contigo todos saben a qué atenerse." },
-  { name:"Pollo", img:"pollo.webp", vec:[1,-1,-2,0,-2,1],
-    desc:"Le caes bien a todo el mundo, hasta a quien dice que no le gusta nada. Eres el comodín social que nunca arma pelea en el grupo." },
-  { name:"Queso", img:"queso.webp", vec:[0,-2,-1,-1,-2,-1],
-    desc:"Minimalista por convicción. No necesitas diez ingredientes para brillar: con lo justo, ya eres suficiente." },
-  { name:"Jamón y queso", img:"jamonqueso.webp", vec:[0,-1,-1,0,-2,1],
-    desc:"Team dupla dinámica. Solo/a estás bien, pero con tu combo perfecto al lado, eres imparable." },
-  { name:"Papa", img:"papa.webp", vec:[1,-2,-1,-2,-2,-1],
-    desc:"Humilde, sencillo/a y siempre reconfortante. No buscas ser el centro de atención, pero cuando faltas todos te extrañan." },
-  { name:"Pabellón", img:"pabellon.webp", vec:[1,2,-2,0,0,2],
-    desc:"¿Por qué elegir una sola cosa si puedes tenerlo todo? Ambicioso/a, generoso/a, y no te conformas con la mitad de nada." },
-  { name:"Pelua", img:"pelua.webp", vec:[0,2,-2,-1,1,1],
-    desc:"Vives en el exceso y no te disculpas por eso. Más queso, más carne, más de todo: la moderación no es lo tuyo." },
-  { name:"Caraotas", img:"caraotas.webp", vec:[2,0,-2,-2,0,-2],
-    desc:"Con raíces profundas y mucha nostalgia. Eres quien conecta a todos con 'lo de antes', y eso vale más de lo que parece." },
-  { name:"Camarón", img:"camaron.webp", vec:[-1,0,-1,2,0,0],
-    desc:"Eres para ocasiones especiales. No te desperdicias en cualquier día, y todo el mundo lo sabe." },
-  { name:"Sifrina", img:"sifrina.webp", vec:[-1,1,-2,2,0,2],
-    desc:"Elegante, exigente y con un gusto impecable. No es que seas difícil: sabes exactamente lo que mereces." },
-  { name:"Perico", img:"perico.webp", vec:[0,0,-2,-2,0,2],
-    desc:"Energía de domingo en la mañana. Espontáneo/a, caótico/a de forma encantadora, siempre listo/a para lo que salga." },
-  { name:"Lomo negro", img:"lomonegro.webp", vec:[-1,0,-1,1,2,-1],
-    desc:"Intenso/a, misterioso/a y con mucho carácter. No eres para todo el mundo, y eso te da power." },
-  { name:"Pizza", img:"pizza.webp", vec:[-2,1,-1,0,0,1],
-    desc:"Rompes las reglas sin pedir permiso. Fusionas mundos que 'no deberían' ir juntos, y aun así funciona increíble." },
-  { name:"Plátano con queso", img:"platano.webp", vec:[-1,0,2,0,-1,0],
-    desc:"Contradictorio/a por naturaleza: dulce y salado a la vez. La gente no te entiende del todo, pero le encanta intentarlo." },
-  { name:"Operada", img:"operada.webp", vec:[-2,2,-1,1,1,2],
-    desc:"Has pasado por muchas transformaciones y no le tienes miedo a reinventarte. Dramático/a, sí, pero siempre con estilo." },
-  { name:"Aire", img:"aire.webp", vec:[-2,-2,0,0,0,-2],
-    desc:"Un poco de misterio, un poco de decepción encantadora. Prometes mucho por fuera y, aunque por dentro haya menos de lo esperado, sigues siendo inolvidable." },
-  { name:"Chicharrón", img:"chicharron.webp", vec:[0,1,-2,-1,2,0],
-    desc:"Crocante por fuera, intenso por dentro. Te atreves a lo que otros ni consideran, y eso te hace memorable." },
-  { name:"Pura salsa", img:"salsa.webp", vec:[-1,-1,0,0,2,2],
-    desc:"Todo estilo, toda actitud. No necesitas sustancia cuando tienes tanta personalidad." },
+  { 
+    name: "Carne mechada", 
+    img: "mechada.webp", 
+    vec: [2, 0, -2, -1, 0, 0],
+    desc: "El clásico de clásicos. No necesitas inventar nada nuevo: tu sola presencia genera confianza. La gente sabe qué esperar de ti y por eso te quiere. Además, eres como buen maracucho: sabes que todo en esta vida sabe mejor si lo ahogas en salsa tártara hasta que la empanada pida auxilio. :3" 
+  },
+  { 
+    name: "Carne molida", 
+    img: "carnemolida.webp", 
+    vec: [2, -1, -2, -2, 0, -1],
+    desc: "Sin lujos, sin drama, sin vueltas. Vas directo al grano y eso es una virtud. Eres el equivalente a un lunes por la mañana: sobrio, rústico, pero resuelves. El terror de las camisas blancas porque un mordisco tuyo es una sentencia de tintorería." 
+  },
+  { 
+    name: "Pollo", 
+    img: "pollo.webp", 
+    vec: [1, -1, -2, 0, -2, 1],
+    desc: "Le caes bien a todo el mundo, hasta al flojo que dice que no tiene hambre. Eres el comodín social que nunca arma pelea en el grupo. Ojo, también eres la vieja confiable cuando alguien va al médico y le dicen: 'Señor, sople el mínimo viento y le da un infarto, haga dieta'. Eres el puente entre la gordura y la dignidad." 
+  },
+  { 
+    name: "Queso", 
+    img: "queso.webp", 
+    vec: [0, -2, -1, -1, -2, -1],
+    desc: "Minimalista por convicción. No necesitas diez ingredientes para brillar: con lo justo, ya eres suficiente. Eres la favorita de los vegetarianos que van a una tarantina de frituras a engañar a su propia conciencia diciendo: 'Bueno, pero es de queso, esto califica como ensalada'." 
+  },
+  { 
+    name: "Jamón y queso", 
+    img: "jamonqueso.webp", 
+    vec: [0, -1, -1, 0, -2, 1],
+    desc: "Team dupla dinámica. Solo estás bien, pero con tu combo perfecto al lado eres imparable. Tienes vibras de desayuno escolar de colegio privado en los 2000. Un gusto diplomático que no ofende a nadie pero que tampoco arriesga nada. El centro centrismo hecho fritura." 
+  },
+  { 
+    name: "Papa", 
+    img: "papa.webp", 
+    vec: [1, -2, -1, -2, -2, -1],
+    desc: "Humilde, sencillo y el rey del carbohidrato sobre carbohidrato. ¿Masa de maíz frita rellena con puré de papa? Una genialidad andina que desafía cualquier ley de la nutrición moderna. Tu nutricionista llora cada vez que te muerden, pero tu corazón (lleno de carbohidratos) sonríe." 
+  },
+  { 
+    name: "Pabellón", 
+    img: "pabellon.webp", 
+    vec: [1, 2, -2, 0, 0, 2],
+    desc: "¿Por qué elegir una sola cosa si puedes meter el almuerzo entero dentro de una masa frita? Ambicioso, generoso y un atentado directo contra el fitness. Eres una experiencia religiosa de tres pisos: carne, caraota, queso y plátano. Comerse una de estas requiere firmar un testamento y programar una siesta de 4 horas mínimas." 
+  },
+  { 
+    name: "Pelua", 
+    img: "pelua.webp", 
+    vec: [0, 2, -2, -1, 1, 1],
+    desc: "Vives en el exceso y no pides disculpas. Más queso, más carne, más de todo: la moderación te parece un insulto personal. Tu filosofía de vida es que si la grasa no te corre por el antebrazo hasta llegar al codo mientras comes, entonces la empanada fracasó como concepto." 
+  },
+  { 
+    name: "Caraotas", 
+    img: "caraotas.webp", 
+    vec: [2, 0, -2, -2, 0, -2],
+    desc: "Con raíces profundas y mucha tradición. Tienes esa vibra de abuela que te dice 'estás muy flaco' mientras te sirve un plato para cuatro personas. Un peligro biológico si tienes una reunión en una oficina cerrada dos horas después, pero la nostalgia y el sabor valen totalmente el riesgo." 
+  },
+  { 
+    name: "Camarón", 
+    img: "camaron.webp", 
+    vec: [-1, 0, -1, 2, 0, 0],
+    desc: "Eres para ocasiones especiales, o al menos eso crees tú porque te la pasas cotizándote alto. Te crees de la alta sociedad playera, pero al final del día terminas frito en el mismo aceite de antier que la de carne molida. Exclusivo, afrodisíaco y propenso a mandar a alguien a emergencias por alergia." 
+  },
+  { 
+    name: "Sifrina", 
+    img: "sifrina.webp", 
+    vec: [-1, 1, -2, 2, 0, 2],
+    desc: "Elegante, exigente y con un gusto impecable. No es que seas difícil, es que sabes exactamente lo que mereces. Seguramente pides la empanada 'con servilleta doble para no tocar el aceite' y preguntas si el queso es bajo en sodio. Spoiler: No lo es, todo ahí dentro es pura y deliciosa grasa marginal." 
+  },
+  { 
+    name: "Perico", 
+    img: "perico.webp", 
+    vec: [0, 0, -2, -2, 0, 2],
+    desc: "Energía pura de domingo por la mañana en familia. Espontáneo, ruidoso y caótico de forma encantadora. Eres el desayuno que se hace cuando ya no queda nada en la nevera salvo tres huevos, medio tomate arrugado y un cuarto de cebolla. Haces magia con el caos." 
+  },
+  { 
+    name: "Lomo negro", 
+    img: "lomonegro.webp", 
+    vec: [-1, 0, -1, 1, 2, -1],
+    desc: "Intenso, misterioso y con un toque agridulce que confunde a los principiantes. Eres el equivalente gastronómico a escuchar música indie: no eres para todo el mundo, requieres un paladar con presupuesto y te da un aire de superioridad intelectual frente a los que comen pollo." 
+  },
+  { 
+    name: "Pizza", 
+    img: "pizza.webp", 
+    vec: [-2, 1, -1, 0, 0, 1],
+    desc: "Rompes las reglas sin pedir permiso. Fusionas mundos que la cultura italiana consideraría un crimen de guerra, pero a ti te sabe a gloria. Eres el terror de las dietas cetogénicas: puro queso derretido, salsa y masa frita. La aberración culinaria más hermosa de la medianoche." 
+  },
+  { 
+    name: "Plátano con queso", 
+    img: "platano.webp", 
+    vec: [-1, 0, 2, 0,-1, 0],
+    desc: "Contradictorio por naturaleza: dulce y salado a la vez. La gente cuerda no entiende cómo funciona tu mente, pero les encanta intentar descifrarte. Tienes el superpoder maracucho de meterle plátano maduro a todo lo que sea comestible solo para ver el mundo arder." 
+  },
+  { 
+    name: "Operada", 
+    img: "operada.webp", 
+    vec: [-2, 2, -1, 1, 1, 2],
+    desc: "Has pasado por muchas transformaciones y no le tienes miedo a los cambios extremos. Te abren por la mitad después de nacer para meterte más cosas de las que tu diseño original soportaba. Dramática, exagerada, costosa, pero siempre espectacular y el centro de todas las miradas." 
+  },
+  { 
+    name: "Aire", 
+    img: "aire.webp", 
+    vec: [-2, -2, 0, 0, 0, -2],
+    desc: "Un monumento al misterio y a la decepción más encantadora del mundo. Te inflas por fuera prometiendo el paraíso terrenal y cuando te muerden... puro viento y una lagrimita de grasa. Eres idéntico/a a las promesas de tu ex: te ves increíble en la vitrina, pero por dentro estás completamente vacío/a." 
+  },
+  { 
+    name: "Chicharrón", 
+    img: "chicharron.webp", 
+    vec: [0, 1, -2, -1, 2, 0],
+    desc: "Crocante por fuera, pesado por dentro. Te atreves a combinaciones que los cardiólogos prohibieron en la convención de Ginebra de 1950. Tienes una personalidad fuerte, crujiente, rústica y dejas una marca imborrable en el hígado de cualquiera que se cruce en tu camino." 
+  },
+  { 
+    name: "Pura salsa", 
+    img: "salsa.webp", 
+    vec: [-1, -1, 0, 0, 2, 2],
+    desc: "Todo estilo, toda actitud, cero sustancia. Eres esa persona que habla bellísimo, se viste espectacular, pero cuando rascas un poquito no hay nada detrás. No te importa, porque mientras tengas carisma, labia y un buen empaque, la gente te seguirá consumiendo con gusto." 
+  }
 ];
 
 const QUESTIONS = [
