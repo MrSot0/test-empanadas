@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO básico -->
+  <title>¿Qué empanada eres? | Test rápido de personalidad</title>
+  <meta name="description" content="Responde 10 preguntas rápidas y descubre cuál de las 19 empanadas venezolanas eres. Test gratis, sin registro.">
+  <meta name="robots" content="index, follow">
+  <!-- REEMPLAZA con tu URL real de GitHub Pages -->
+  <link rel="canonical" href="https://mrsot0.github.io/test-de-empanadas/">
+
+  <!-- 💡 ICONOS: Logo en la pestaña y miniatura de búsqueda en Google -->
+  <!-- Favicon estándar para la pestaña -->
+  <link rel="icon" type="image/x-icon" href="src/favicon.ico">
+  <!-- Imagen PNG de alta resolución (mínimo 192x192) que Google usa para la miniatura al buscar -->
+  <link rel="icon" type="image/webp" sizes="192x192" href="src/sublogo.webp">
+  <!-- Icono para dispositivos Apple -->
+  <link rel="apple-touch-icon" href="src/sublogo.webp">
+
+  <!-- Open Graph (WhatsApp, Facebook, etc.) -> Usar rutas absolutas completas -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="¿Qué empanada eres? | Test rápido">
+  <meta property="og:description" content="10 preguntas. 19 empanadas posibles. Descubre cuál eres tú.">
+  <meta property="og:image" content="https://mrsot0.github.io/test-de-empanadas/src/og-image.jpg">
+  <meta property="og:url" content="https://mrsot0.github.io/test-de-empanadas/">
+  <meta property="og:locale" content="es_VE">
+
+  <!-- Twitter/X Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="¿Qué empanada eres?">
+  <meta name="twitter:description" content="Test rápido: 10 preguntas, 19 empanadas posibles.">
+  <meta name="twitter:image" content="https://mrsot0.github.io/test-de-empanadas/src/sublogo.webp">
+
+  <!-- Datos estructurados para Google -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Quiz",
+    "name": "¿Qué empanada eres?",
+    "description": "Test de personalidad con 10 preguntas para descubrir qué empanada venezolana eres.",
+    "inLanguage": "es"
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="wrap">
+
+  <header class="hero">
+    <div class="eyebrow">El test definitivo</div>
+    <h1>¿Qué <em>empanada</em><br>eres tú?</h1>
+    <p class="sub">10 preguntas rápidas. Cero relleno de más. Descubre cuál de las 19 empanadas te representa mejor.</p>
+  </header>
+
+  <!-- Progreso, estilo repulgue -->
+  <div class="repulgue" id="repulgue" aria-hidden="true"></div>
+
+  <main>
+
+    <section class="start" id="screen-start">
+      <div class="card">
+        <div class="facts">
+          <div class="fact"><b>10</b>preguntas</div>
+          <div class="fact"><b>19</b>empanadas posibles</div>
+          <div class="fact"><b>~90s</b>de tu vida</div>
+        </div>
+        <button class="btn-primary" id="btn-start">Empezar el test</button>
+      </div>
+    </section>
+
+    <section class="hidden" id="screen-quiz">
+      <div class="card">
+        <div class="qcount" id="qcount">Pregunta 1 de 10</div>
+        <h2 class="question" id="qtext"></h2>
+        <div class="options" id="qoptions"></div>
+        <div class="backrow">
+          <button class="link-btn hidden" id="btn-back">← Pregunta anterior</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anuncio 1: aquí va tu bloque de AdSense u otro proveedor -->
+    <div class="ad-slot" id="ad-slot-1">Espacio publicitario</div>
+
+    <section class="hidden result" id="screen-result">
+      <div class="card">
+        <div class="result-media">
+          <img src="" alt="Tu empanada" class="result-img" id="r-img">
+        </div>
+        
+        <div class="result-eyebrow">Eres...</div>
+        <div class="result-name" id="r-name"></div>
+        <div class="result-match" id="r-match"></div>
+        <p class="result-desc" id="r-desc"></p>
+        
+        <div class="result-actions">
+          <button class="btn-primary" id="btn-copy">Copiar resultado</button>
+          <button class="btn-secondary" id="btn-restart">Repetir el test</button>
+        </div>
+
+        <div class="share-title">¡Comparte tu empanada!</div>
+        <div class="share-buttons">
+          <a href="#" id="share-wa" target="_blank" class="share-btn wa" rel="noopener">WhatsApp</a>
+          <a href="#" id="share-fb" target="_blank" class="share-btn fb" rel="noopener">Facebook</a>
+          <a href="#" id="share-tw" target="_blank" class="share-btn tw" rel="noopener">X / Twitter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Anuncio 2 -->
+    <div class="ad-slot" id="ad-slot-2">Espacio publicitario</div>
+
+  </main>
+
+  <footer>Hecho con hambre 🥟 · Test no oficial, solo por diversión</footer>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+
+<!-- Ícono de empanada reutilizable -->
+<svg style="display:none">
+  <symbol id="empanada-icon" viewBox="0 0 60 28">
+    <path fill="currentColor" d="M5,24 A25,22 0 0 1 55,24 Z"/>
+  </symbol>
+</svg>
+
+<!-- Fondo animado -->
+<div class="bg-empanadas" aria-hidden="true">
+  <svg class="floaty f1"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f2"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f3"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f4"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f5"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f6"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f7"><use href="#empanada-icon"/></svg>
+  <svg class="floaty f8"><use href="#empanada-icon"/></svg>
+</div>
+
+</html>
