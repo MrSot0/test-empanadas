@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Declaración del mapa del sitio para los motores de búsqueda
+Sitemap: https://mrsot0.github.io/test-empanadas/sitemap.xml
