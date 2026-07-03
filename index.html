@@ -7,7 +7,7 @@
 
   <!-- SEO básico -->
   <title>¿Qué empanada eres? | Test rápido de personalidad</title>
-  <meta name="description" content="Responde 10 preguntas rápidas y descubre cuál de las 19 empanadas venezolanas eres. Test gratis, sin registro.">
+  <meta name="description" content="¿Quieres saber qué empanada soy? Responde este divertido test de personalidad de 10 preguntas y descubre cuál de las 19 empanadas venezolanas eres.">
   <meta name="robots" content="index, follow">
   <!-- REEMPLAZA con tu URL real de GitHub Pages -->
   <link rel="canonical" href="https://mrsot0.github.io/test-empanadas/">
@@ -16,15 +16,17 @@
   <!-- Favicon estándar para la pestaña -->
   <link rel="icon" type="image/x-icon" href="src/favicon.ico">
   <!-- Imagen PNG de alta resolución (mínimo 192x192) que Google usa para la miniatura al buscar -->
-  <link rel="icon" type="image/webp" sizes="192x192" href="src/sublogo.webp">
+  <link rel="icon" type="image/webp" sizes="192x192" href="src/favicon192x192.png">
   <!-- Icono para dispositivos Apple -->
-  <link rel="apple-touch-icon" href="src/sublogo.webp">
+  <link rel="apple-touch-icon" href="src/favicon192x192.png">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="src/favicon.png">
 
   <!-- Open Graph (WhatsApp, Facebook, etc.) -> Usar rutas absolutas completas -->
   <meta property="og:type" content="website">
-  <meta property="og:title" content="¿Qué empanada eres? | Test rápido">
-  <meta property="og:description" content="10 preguntas. 19 empanadas posibles. Descubre cuál eres tú.">
-  <meta property="og:image" content="https://mrsot0.github.io/test-empanadas/src/sublogo.webp">
+  <meta property="og:title" content="¿Qué empanada eres? | Test de Personalidad Venezolano">
+  <meta property="og:description" content="Un divertido juego interactivo de 10 preguntas para descubrir cuál de las 19 empanadas venezolanas se adapta mejor a tu forma de ser.">
+  <meta property="og:image" content="https://mrsot0.github.io/test-empanadas/src/favicon192x192.png">
   <meta property="og:url" content="https://mrsot0.github.io/test-empanadas/">
   <meta property="og:locale" content="es_VE">
 
@@ -32,16 +34,25 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="¿Qué empanada eres?">
   <meta name="twitter:description" content="Test rápido: 10 preguntas, 19 empanadas posibles.">
-  <meta name="twitter:image" content="https://mrsot0.github.io/test-empanadas/src/sublogo.webp">
+  <meta name="twitter:image" content="https://mrsot0.github.io/test-empanadas/src/favicon192x192.png">
 
   <!-- Datos estructurados para Google -->
   <script type="application/ld+json">
-  {
+    {
     "@context": "https://schema.org",
     "@type": "Quiz",
-    "name": "¿Qué empanada eres?",
-    "description": "Test de personalidad con 10 preguntas para descubrir qué empanada venezolana eres.",
-    "inLanguage": "es"
+    "name": "¿Qué empanada eres? | Test de Personalidad Venezolano",
+    "description": "Un divertido juego interactivo de 10 preguntas para descubrir cuál de las 19 empanadas venezolanas se adapta mejor a tu forma de ser.",
+    "inLanguage": "es",
+    "author": {
+      "@type": "Person",
+      "name": "mrsot0"
+    },
+    "educationalAlignment": {
+      "@type": "AlignmentObject",
+      "alignmentType": "cultural",
+      "educationalFramework": "Cultura Venezolana"
+    }
   }
   </script>
 
@@ -144,9 +155,14 @@
     
 
   </main>
-
+    <details style="margin: 24px auto; max-width: 600px; font-family: 'Nunito', sans-serif; opacity: 0.8; cursor: pointer; text-align: center;">
+    <summary style="font-weight: 700; color: #444;">Ver más sobre el test🥟</summary>
+    <p style="padding: 12px; font-size: 0.95rem; text-align: left; line-height: 1.5; color: #555; text-align: justify;">
+      La empanada es un pilar de la gastronomía venezolana. Este test de personalidad analiza tus respuestas para emparejarte 
+      con una de las 19 empanadas más icónicas de Venezuela, como la empanada de carne mechada, la clásica de papa, la empanada de camarón, pabellón o incluso ¡la mítica empanada de aire!
+    </p>
+  </details>
   <footer>Hecho con hambre 🥟 · Test no oficial, solo por diversión</footer>
-</div>
 
 <script src="js/data.js"></script>
 <script src="js/quiz.js"></script>
